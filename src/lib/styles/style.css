@@ -1,0 +1,32 @@
+:root {
+	--primary-color: #4c4d52;
+	--secondory-color: #523524;
+	--background-color: #e6d2b5;
+}
+
+body {
+	margin: 0;
+	background: var(--background-color);
+	color: var(--primary-color);
+	font-family: 'Comfortaa', sans-serif;
+}
+
+main {
+	padding: 1rem;
+	margin: 2rem auto;
+	max-width: 40rem;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	margin: 0 10vw;
+}
+
+svg {
+	fill: var(--secondory-color);
+}
