@@ -27,8 +27,4 @@
 		margin-top: 6px;
 		margin-right: 8px;
 	}
-
-	.tags a:hover {
-		font-size: 18px;
-	}
 </style>

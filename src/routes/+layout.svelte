@@ -19,7 +19,7 @@
 	const socialLinks = {
 		linkedin: process.env.LINKEDIN,
 		github: process.env.GITHUB,
-		email: process.env.EMAIL,
+		email: process.env.EMAIL
 	};
 	const ownerName = 'Narek Kostanyan';
 </script>

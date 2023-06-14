@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArticleBox from '$lib/components/Article.svelte';
+	import ArticleBox from '$lib/components/ArticleBox.svelte';
 	import type { Article } from '$lib/types/Article';
 	export let articles: Article[];
 </script>
@@ -10,15 +10,6 @@
 	{/each}
 </div>
 
-<!-- <div class="pagination">
-	<a href="/">Previos page</a>|
-	<a href="/">1</a>
-	<a href="/">2</a>
-	<a href="/">...</a>
-	<a href="/">12</a>
-	<a href="/">13</a> |
-	<a href="/">Next page</a>
-</div> -->
 
 <style>
 	.articles {
