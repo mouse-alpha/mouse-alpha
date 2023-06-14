@@ -1,50 +1,32 @@
-<script>
-	/**
-	 * @type {string}
-	 */
-	export let title;
-	import HomeIcon from '$lib/icons/home.svelte';
-	import RssIcon from '$lib/icons/rss.svelte';
-	import '$lib/styles/style.css';
+<script lang="ts">
+	import Tags from './Tags.svelte';
+	import Navigation from './Navigation.svelte';
+	import type { SocialLinks } from '$lib/types/SocialLinks';
+
+	export let ownerName: string;
+	export let tags: string[];
+	export let socialLinks: SocialLinks = {};
 </script>
 
-<header>
-	<div class="title" data-testid="title">{title}</div>
-
-	<nav>
-		<ul>
-			<li>
-				<a href="/" data-testid="home-link"><HomeIcon /></a>
-			</li>
-			<li>
-				<a href="/" data-testid="rss-link"><RssIcon /></a>
-			</li>
-		</ul>
-	</nav>
-</header>
+<div class="header">
+	<div class="blog-title">Welcome to<br /> {ownerName}'s <br />Blog</div>
+	<Navigation {socialLinks} />
+	<Tags {tags} />
+</div>
 
 <style>
-	header {
-		padding: 0.2rem;
-		color: var(--secondory-color);
+	.header {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		text-align: center;
-		overflow: hidden;
-		border-bottom: 1px solid var(--primary-color);
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		min-height: 50vh;
 	}
 
-	header .title {
-		font-size: 1.6rem;
-		text-align: left;
-	}
-
-	ul {
-		margin: 0;
-		list-style-type: none;
-		display: flex;
-		gap: 1rem;
-		align-items: center;
+	.blog-title {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 36px;
+		padding-bottom: 10px;
 	}
 </style>
