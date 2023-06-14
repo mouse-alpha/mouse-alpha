@@ -3,4 +3,5 @@ export type Article = {
 	publishDate: Date;
 	description: string;
 	content?: string;
+	tags?:string[]
 };
