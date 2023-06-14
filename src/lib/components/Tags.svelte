@@ -4,8 +4,10 @@
 
 <div class="tags">
 	<b>You can find articles about :</b>
-	{#each tags as tag}
-		<a href="https://www.google.com/search?q={tag}">#{tag},</a>
+	{#each tags as tag, index}
+		<a href="https://www.google.com/search?q={tag}">
+			#{tag}{#if index!=tags.length-1},{/if}
+		</a>
 	{/each}
 	<span>and</span>
 	<a href="/">more...</a>
