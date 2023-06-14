@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Header from '$lib/components/Header.svelte';
+	import dotenv from 'dotenv';
 
 	import '$lib/styles/style.css';
 
@@ -13,10 +14,12 @@
 		'animals',
 		'aquascapes'
 	];
+	dotenv.config();
+
 	const socialLinks = {
-		linkedin: 'https://linkedin.com',
-		github: 'https://github.com',
-		email: 'mail@example.com'
+		linkedin: process.env.LINKEDIN,
+		github: process.env.GITHUB,
+		email: process.env.EMAIL,
 	};
 	const ownerName = 'Narek Kostanyan';
 </script>
