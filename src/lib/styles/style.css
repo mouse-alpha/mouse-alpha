@@ -3,7 +3,7 @@
 :root {
 	--primary-color: #fafafa;
 	--secondory-color: #222;
-	--highlight-color: #ff3333;
+	--highlight-color: #808080;
 }
 
 body {
@@ -19,6 +19,10 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
+}
+
+a:hover {
+    color:var(--highlight-color);
 }
 
 .content {
