@@ -44,7 +44,6 @@
 		align-items: flex-start;
         padding: 16px;
 		max-width: 1160px ;
-		min-width: 360px;
 	}
 
     .tags {
