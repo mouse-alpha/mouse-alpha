@@ -5,9 +5,11 @@
 </script>
 
 <div class="article">
-	<div class="title"><a href='/blog/article'>{article.title}</a></div>
+	<div class="title"><a href="/blog/article">{article.title}</a></div>
 	<div class="publish-date">{article.publishDate.toDateString()}</div>
-	<div class="details">{article.description}<a href="/blog/article">Click here to read more.</a></div>
+	<div class="details">
+		{article.description}<a href="/blog/article">Click here to read more.</a>
+	</div>
 </div>
 
 <style>
