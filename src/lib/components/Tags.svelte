@@ -10,7 +10,7 @@
 		</a>
 	{/each}
 	<span>and</span>
-	<a href="/">more...</a>
+	<a href="/">more</a>...
 </div>
 
 <style>

@@ -21,6 +21,10 @@
 		max-width: 360px;
 	}
 
+	.title a {
+		text-decoration: none;
+	}
+
 	.details a {
 		margin-left: 6px;
 		font-size: 12px;

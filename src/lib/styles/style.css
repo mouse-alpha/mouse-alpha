@@ -17,7 +17,9 @@ body {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: dotted underline var(--highlight-color) 1px;
+
+	/* text-decoration: wavy overline lime; */
 	color: inherit;
 }
 
