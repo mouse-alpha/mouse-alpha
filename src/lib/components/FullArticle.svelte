@@ -27,9 +27,8 @@
 		Tags:
 		{#if article.tags != undefined}
 			{#each article.tags as tag, index}
-				<a href="https://www.google.com/search?q={tag}">
-					#{tag}{#if index != article.tags.length - 1},{/if}
-				</a>
+				<a class="margin" href="https://www.google.com/search?q={tag}">#{tag}</a>
+				{#if index != article.tags.length - 1}<span>,</span>{/if}
 			{/each}
 		{/if}
 	</div>
@@ -43,11 +42,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-        padding: 16px;
-		max-width: 1160px ;
+		padding: 16px;
+		max-width: 1160px;
 	}
 
 	.tags {
 		padding: 6px 0;
+	}
+
+	.margin {
+		margin-left: 8px;
 	}
 </style>

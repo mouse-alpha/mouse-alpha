@@ -5,12 +5,13 @@
 <div class="tags">
 	<b>You can find articles about :</b>
 	{#each tags as tag, index}
-		<a href="https://www.google.com/search?q={tag}">
-			#{tag}{#if index != tags.length - 1},{/if}
-		</a>
+		<a class="margin" href="https://www.google.com/search?q={tag}">
+			#{tag}
+		</a>{#if index != tags.length - 1},{/if}
 	{/each}
-	<span>and</span>
-	<a href="/">more</a>...
+	<span class="margin">and</span>
+	<a class="margin" href="/">more</a>
+	<span>...<span /></span>
 </div>
 
 <style>
@@ -27,6 +28,9 @@
 		line-height: 18px;
 		font-size: 16px;
 		margin-top: 6px;
-		margin-right: 8px;
+	}
+
+	.margin {
+		margin-left: 8px;
 	}
 </style>
