@@ -10,7 +10,6 @@
 	{/each}
 </div>
 
-
 <style>
 	.articles {
 		display: grid;
