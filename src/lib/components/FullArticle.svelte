@@ -2,7 +2,7 @@
 	import '$lib/styles/text.css';
 	import type { Article } from '$lib/types/Article';
 
-	let article: Article = {
+	export let article: Article = {
 		title: 'My FIrst Blog Post',
 		publishDate: new Date(2013, 11, 17),
 		description:
@@ -34,7 +34,7 @@
 	</div>
 
 	<div class="publish-date">{article.publishDate.toDateString()}</div>
-	<div class="details">{article.content}</div>
+	<div class="details"><svelte:component this={article.content} /></div>
 </div>
 
 <style>

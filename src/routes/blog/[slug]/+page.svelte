@@ -1,8 +1,6 @@
 <script>
+    import FullArticle from '$lib/components/FullArticle.svelte';
 	export let data;
 </script>
 
-<article>
-	<h1>{data.title}</h1>
-	<svelte:component this={data.content} />
-</article>
+<FullArticle article={data.article}/>
