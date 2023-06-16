@@ -15,7 +15,9 @@
 
 <Header {ownerName} tags={data.tags} {socialLinks} />
 <div class="content">
-	<main>
-		<slot />
-	</main>
+	<article>
+		<main>
+			<slot />
+		</main>
+	</article>
 </div>
