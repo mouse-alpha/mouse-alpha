@@ -6,10 +6,10 @@
 </script>
 
 <div class="article">
-	<div class="title"><a href="/blog">{article.title}</a></div>
+	<div class="title"><a href="/blog/{article.path}">{article.title}</a></div>
 	<div class="publish-date">{publishDate.toDateString()}</div>
 	<div class="details">
-		{article.description}<a href="/blog">Click here to read more.</a>
+		{article.description}<a href="/blog/{article.path}">Click here to read more.</a>
 	</div>
 </div>
 

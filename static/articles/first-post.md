@@ -9,6 +9,6 @@ Hi there, and welcome to my blog! I'm so glad you're here. My name is Narek, and
 
 I started this blog because I wanted to create a space where I could connect with other people who share my interests. I hope that you'll find my blog to be a friendly and welcoming place where you can learn, laugh, and be inspired.
 
-In this first post, I just wanted to say hello and introduce myself. I'm looking forward to sharing more with you in the future.
+> In this first post, I just wanted to say hello and introduce myself. I'm looking forward to sharing more with you in the future.
 
 Thanks for reading!
