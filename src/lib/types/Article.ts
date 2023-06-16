@@ -4,4 +4,5 @@ export type Article = {
 	description: string;
 	content?: string;
 	tags?: string[];
+	path?: string;
 };

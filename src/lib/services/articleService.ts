@@ -1,15 +1,15 @@
 import type { Article } from '$lib/types/Article';
 const PATH = '/static/articles/';
 
-export const fetchMarkdownArticles = async () => {
+export const fetchMarkdownArticles = async (): Promise<Article[]> => {
 	/* @vite-ignore */
 	const allPostFiles = import.meta.glob(`/static/articles/*.md`);
 	const iterablePostFiles = Object.entries(allPostFiles);
 
 	const allPosts = await Promise.all(
 		iterablePostFiles.map(async ([path, resolver]) => {
-			const { metadata } = await resolver();
-			console.log(path);
+			const post: any = await resolver();
+			const metadata: any = post.metadata;
 			const postPath = path.replace(PATH, '').replace('.md', '');
 			const article: Article = {
 				title: metadata.title,
@@ -18,7 +18,7 @@ export const fetchMarkdownArticles = async () => {
 				tags: metadata.tags,
 				path: postPath
 			};
-			return article
+			return article;
 		})
 	);
 	return allPosts;
@@ -31,7 +31,8 @@ export const fetchMarkdownATopTags = async () => {
 
 	const tags = await Promise.all(
 		iterablePostFiles.map(async ([path, resolver]) => {
-			const { metadata } = await resolver();
+			const post: any = await resolver();
+			const metadata: any = post.metadata;
 			return metadata.tags;
 		})
 	);
@@ -39,8 +40,8 @@ export const fetchMarkdownATopTags = async () => {
 	return topTags;
 };
 
-function getTopRepeatedElements(list, size) {
-	let frequencyMap = {};
+function getTopRepeatedElements(list: string[], size: number) {
+	let frequencyMap: any = {};
 	for (let i = 0; i < list.length; i++) {
 		let item = list[i];
 		if (frequencyMap[item]) {

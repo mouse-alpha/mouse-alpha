@@ -12,9 +12,7 @@
 			'voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat' +
 			'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 	};
-	console.log(data)
-	// const articles: Article[] = Array(12).fill(article);
-	const articles=data.articles;
+	const articles = data.articles;
 </script>
 
 <ArticlesBox {articles} />

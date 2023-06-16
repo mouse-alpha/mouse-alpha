@@ -2,7 +2,7 @@
 	import '$lib/styles/text.css';
 	import type { Article } from '$lib/types/Article';
 	export let article: Article;
-	const publishDate=new Date(article.publishDate)
+	const publishDate = new Date(article.publishDate);
 </script>
 
 <div class="article">
