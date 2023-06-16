@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ArticlesBox from '$lib/components/Articles.svelte';
 	import type { Article } from '$lib/types/Article';
-
+	export let data;
 	let article: Article = {
 		title: 'My FIrst Blog Post',
 		publishDate: new Date(2013, 11, 17),
@@ -12,7 +12,9 @@
 			'voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat' +
 			'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 	};
-	const articles: Article[] = Array(12).fill(article);
+	console.log(data)
+	// const articles: Article[] = Array(12).fill(article);
+	const articles=data.articles;
 </script>
 
 <ArticlesBox {articles} />

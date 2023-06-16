@@ -15,14 +15,10 @@ export const fetchMarkdownArticles = async () => {
 				title: metadata.title,
 				description: metadata.description,
 				publishDate: new Date(metadata.publishDate),
-				tags: metadata.tags
-			};
-
-			return {
-				// meta: metadata,
-				article: article,
+				tags: metadata.tags,
 				path: postPath
 			};
+			return article
 		})
 	);
 	return allPosts;
@@ -41,19 +37,6 @@ export const fetchMarkdownATopTags = async () => {
 	);
 	const topTags = getTopRepeatedElements(tags.flat(), 7);
 	return topTags;
-};
-
-export const fetchMarkdownArticle = async (path) => {
-	/* @vite-ignore */
-	const articleData = await import(`/static/articles/${path}.md`);
-	const { title, date } = articleData.metadata;
-	const content = articleData.default;
-
-	return {
-		content,
-		title,
-		date
-	};
 };
 
 function getTopRepeatedElements(list, size) {
