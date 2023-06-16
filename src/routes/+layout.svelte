@@ -3,19 +3,8 @@
 	import dotenv from 'dotenv';
 
 	import '$lib/styles/style.css';
-
-	const tags = [
-		'golang',
-		'testing',
-		'playwright',
-		'typescript',
-		'python',
-		'photo',
-		'animals',
-		'aquascapes'
-	];
+	export let data;
 	dotenv.config();
-
 	const socialLinks = {
 		linkedin: process.env.LINKEDIN,
 		github: process.env.GITHUB,
@@ -24,7 +13,7 @@
 	const ownerName = 'Narek Kostanyan';
 </script>
 
-<Header {ownerName} {tags} {socialLinks} />
+<Header {ownerName} tags={data.tags} {socialLinks} />
 <div class="content">
 	<main>
 		<slot />

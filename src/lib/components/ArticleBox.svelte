@@ -2,13 +2,14 @@
 	import '$lib/styles/text.css';
 	import type { Article } from '$lib/types/Article';
 	export let article: Article;
+	const publishDate = new Date(article.publishDate);
 </script>
 
 <div class="article">
-	<div class="title"><a href="/blog/article">{article.title}</a></div>
-	<div class="publish-date">{article.publishDate.toDateString()}</div>
+	<div class="title"><a href="/blog/{article.path}">{article.title}</a></div>
+	<div class="publish-date">{publishDate.toDateString()}</div>
 	<div class="details">
-		{article.description}<a href="/blog/article">Click here to read more.</a>
+		{article.description}<a href="/blog/{article.path}">Click here to read more.</a>
 	</div>
 </div>
 
