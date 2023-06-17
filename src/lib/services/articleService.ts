@@ -25,6 +25,17 @@ export const fetchMarkdownArticles = async (): Promise<Article[]> => {
 };
 
 export const fetchMarkdownATopTags = async () => {
+	const tags = await getTags();
+	const topTags = getTopRepeatedElements(tags.flat(), 7);
+	return topTags;
+};
+
+export const fetchMarkdownAllTags = async () => {
+	const tags = await getTags();
+	return getElementFrequency(tags.flat());
+};
+
+async function getTags() {
 	/* @vite-ignore */
 	const allPostFiles = import.meta.glob(`/static/articles/*.md`);
 	const iterablePostFiles = Object.entries(allPostFiles);
@@ -36,11 +47,10 @@ export const fetchMarkdownATopTags = async () => {
 			return metadata.tags;
 		})
 	);
-	const topTags = getTopRepeatedElements(tags.flat(), 7);
-	return topTags;
-};
+	return tags;
+}
 
-function getTopRepeatedElements(list: string[], size: number) {
+function getElementFrequency(list: string[]) {
 	let frequencyMap: any = {};
 	for (let i = 0; i < list.length; i++) {
 		let item = list[i];
@@ -50,7 +60,12 @@ function getTopRepeatedElements(list: string[], size: number) {
 			frequencyMap[item] = 1;
 		}
 	}
-	let sortedKeys = Object.keys(frequencyMap).sort((a, b) => frequencyMap[b] - frequencyMap[a]);
-	let repeatedKeys = sortedKeys.filter((key) => frequencyMap[key] > 0);
+	return frequencyMap;
+}
+
+function getTopRepeatedElements(list: string[], size: number) {
+	const frequencyMap: any = getElementFrequency(list);
+	const sortedKeys = Object.keys(frequencyMap).sort((a, b) => frequencyMap[b] - frequencyMap[a]);
+	const repeatedKeys = sortedKeys.filter((key) => frequencyMap[key] > 0);
 	return repeatedKeys.slice(0, size);
 }

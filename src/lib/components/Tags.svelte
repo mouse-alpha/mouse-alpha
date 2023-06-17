@@ -5,12 +5,12 @@
 <div class="tags">
 	<b>You can find articles about :</b>
 	{#each tags as tag, index}
-		<a class="margin" href="https://www.google.com/search?q={tag}">
+		<a class="margin" href="/tag/{tag}">
 			#{tag}
 		</a>{#if index != tags.length - 1},{/if}
 	{/each}
 	<span class="margin">and</span>
-	<a class="margin" href="/">more</a>
+	<a class="margin" href="/tag">more</a>
 	<span>...<span /></span>
 </div>
 

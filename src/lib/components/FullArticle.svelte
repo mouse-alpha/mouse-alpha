@@ -27,7 +27,7 @@
 		Tags:
 		{#if article.tags != undefined}
 			{#each article.tags as tag, index}
-				<a class="margin" href="https://www.google.com/search?q={tag}">#{tag}</a>
+				<a class="margin" href="/tag/{tag}">#{tag}</a>
 				{#if index != article.tags.length - 1}<span>,</span>{/if}
 			{/each}
 		{/if}
