@@ -1,4 +1,6 @@
 import { fetchMarkdownArticles } from '$lib/services/articleService';
+import { setContext } from '@sveltejs/kit';
+
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -31,7 +33,7 @@ const render = (posts) => `<?xml version="1.0" encoding="UTF-8" ?>
 <title>${siteTitle}</title>
 <description>${siteDescription}</description>
 <link>${siteURL}</link>
-<atom:link href="${siteURL}/rss.xml" rel="self" type="application/rss+xml"/>
+<atom:link href="${siteURL}/rss.xml" rel="self" type="application/xml"/>
 ${posts
 	.map(
 		(post) => `<item>
