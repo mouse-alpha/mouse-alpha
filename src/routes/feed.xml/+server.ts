@@ -40,7 +40,7 @@ ${posts
 <guid isPermaLink="true">${siteURL}/blog/${post.path}</guid>
 <title>${post.title}</title>
 <link>${siteURL}/blog/${post.path}</link>
-<description>${post.description}</description>
+<description>${post.description} - &lt;a href='${siteURL}/blog/${post.path}'&gt;Read more ...&lt;/a&gt;</description>
 <pubDate>${new Date(post.publishDate).toUTCString()}</pubDate>
 </item>`
 	)
